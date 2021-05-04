@@ -1,7 +1,7 @@
 {
 	"version": "2",
 	"templates": [
-		{
+        {
 			"category": [
 				"Video",
 				"Music",
@@ -2692,9 +2692,49 @@
 				{
 					"container": "/var/www/html/images"
 				}
+			]
+		},
+        {
+			"type": 1,
+			"title": "Registry",
+			"description": "Docker image registry",
+			"categories": [
+				"docker"
 			],
-		}
-
+			"platform": "linux",
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/registry.png",
+			"image": "registry:latest",
+			"ports": [
+				"5000/tcp"
+			],
+			"volumes": [{
+				"container": "/var/lib/registry"
+			}]
+		},
+		{
+			"type": 1,
+			"title": "Nginx",
+			"description": "High performance web server",
+			"categories": [
+				"webserver"
+			],
+			"platform": "linux",
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/nginx.png",
+			"image": "nginx:latest",
+			"ports": [
+				"80/tcp",
+				"443/tcp"
+			],
+			"volumes": [{
+					"container": "/etc/nginx"
+				},
+				{
+					"container": "/usr/share/nginx/html"
+				}
+			]
+		},
+		{
+			"type": 1,
 			"title": "Httpd",
 			"description": "Open-source HTTP server",
 			"categories": [
